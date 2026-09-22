@@ -6,6 +6,9 @@
 <title>Портфолио Анны Подолян</title>
 <meta name="description" content="Анна Подолян — PPC-специалист: Google Ads, Meta Ads, GA4 и GTM, SEO, SMM. Учебные кейсы Hillel IT School с файлами и скриншотами кабинетов. Открыта к стажировкам и junior-позициям.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:url" content="https://anna-podolian.netlify.app/">
 <meta property="og:title" content="Анна Подолян — портфолио PPC-специалиста">
 <meta property="og:description" content="Google Ads, Meta Ads, GA4 и GTM, SEO, SMM. Учебные кейсы с файлами и скриншотами кабинетов. Открыта к стажировкам и junior-позициям.">
@@ -167,19 +170,32 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
   .case-body dl{grid-template-columns:1fr;gap:2px 0}.case-body dt{padding-top:10px}
 }
 @media(max-width:380px){.grid{grid-template-columns:1fr}}
+
+/* language switcher */
+.lang{position:absolute;top:14px;right:0;display:flex;gap:4px}
+.lang button{font-family:inherit;font-size:12px;font-weight:500;padding:5px 9px;border-radius:var(--radius-md);border:1px solid var(--border-light);background:transparent;color:var(--text-secondary);cursor:pointer;letter-spacing:.5px}
+.lang button:hover{border-color:var(--border-mid);color:var(--text-primary)}
+.lang button.active{background:var(--text-primary);color:var(--bg-primary);border-color:var(--text-primary)}
+.wrap{position:relative}
+@media(max-width:600px){.lang{top:8px}}
 </style>
 </head>
 <body>
-
 <div class="wrap">
+  <div class="lang" id="lang">
+    <button type="button" data-lang="ru">RU</button>
+    <button type="button" data-lang="uk">UA</button>
+    <button type="button" data-lang="en">EN</button>
+  </div>
+
   <div class="hero">
-    <img class="avatar" src="photo.jpg" alt="Анна Подолян">
+    <img class="avatar" src="photo.jpg" alt="Anna Podolian">
     <div class="hero-label">Portfolio 2026</div>
-    <h1 class="hero-title">Анна Подолян</h1>
-    <p class="hero-sub">PPC-специалист: Google Ads и Meta Ads, веб-аналитика GA4 и GTM; плюс SEO и SMM. Тбилиси, работаю удалённо. Открыта к стажировкам, junior-позициям и проектам.</p>
+    <h1 class="hero-title" data-i18n="name"></h1>
+    <p class="hero-sub" data-i18n="heroSub"></p>
     <div class="hero-stats" id="stats"></div>
     <div class="hero-cta">
-      <a class="btn primary" href="mailto:annodessa2016@icloud.com?subject=%D0%97%D0%B0%D0%B4%D0%B0%D1%87%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%90%D0%BD%D0%BD%D1%8B">Написать</a>
+      <a class="btn primary" id="btnMail" href="mailto:annodessa2016@icloud.com" data-i18n="btnMail"></a>
       <a class="btn" href="https://www.linkedin.com/in/anna-podolian/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
   </div>
@@ -188,60 +204,115 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
   <div id="content"></div>
 
   <div class="offer">
-    <div class="offer-title">Возьму одну задачу бесплатно</div>
-    <p class="offer-sub">Набираю практику на реальных рекламных задачах. Сделаю в срок и отдам результат, даже если дальше не работаем. Условие одно — разрешение показать работу здесь.</p>
-    <div class="offer-list">
-      <div class="offer-item"><b>Настройка или ревизия рекламного кабинета</b><span>Google Ads или Meta Ads: структура кампаний, семантика и аудитории, UTM, минус-слова, что отключить и что докрутить.</span><em>3–5 рабочих дней</em></div>
-      <div class="offer-item"><b>Порядок в аналитике</b><span>GA4 и GTM: события, конверсии, передача в кабинеты, отчёт по источникам заявок.</span><em>3–5 рабочих дней</em></div>
-      <div class="offer-item"><b>Контент-план на месяц</b><span>Конкуренты, аудитория, Tone of Voice, рубрики, 30 тем с форматами, календарь.</span><em>5 рабочих дней</em></div>
-    </div>
+    <div class="offer-title" data-i18n="offerTitle"></div>
+    <p class="offer-sub" data-i18n="offerSub"></p>
+    <div class="offer-list" id="offers"></div>
   </div>
 
-  <div class="about">
-    <div>
-      <h3>Образование</h3>
-      <p>Hillel IT School, курс «Интернет-маркетинг with AI», 42 занятия, январь — сентябрь 2026. Диплом с отличием, сертификат № 56043738.</p>
-      <p>Одесский государственный экологический университет, «Финансы и кредит», 2002.</p>
-    </div>
-    <div>
-      <h3>Что за спиной</h3>
-      <p>Двадцать лет в финансах и операциях транспортных компаний: руководила первичной бухгалтерией центрального офиса и 70 филиалов, четыре года вела собственный бизнес в перевозках, пять лет закрывала финансы польской транспортной компании. Планировать бюджет, сводить цифры и отвечать за результат — в рекламном кабинете задача та же.</p>
-    </div>
-    <div>
-      <h3>Инструменты и языки</h3>
-      <p>Google Ads, Meta Business Manager, GA4, Google Tag Manager, Search Console, Screaming Frog, Serpstat, Sitechecker, SimilarWeb, Canva, ChatGPT, Claude, Midjourney, Google Таблицы и Excel.</p>
-      <p>Русский и украинский — родные, английский — письменный рабочий.</p>
-    </div>
-  </div>
+  <div class="about" id="about"></div>
 
   <div class="footer">
     <div class="footer-links">
       <a href="mailto:annodessa2016@icloud.com">annodessa2016@icloud.com</a>
       <a href="https://www.linkedin.com/in/anna-podolian/" target="_blank" rel="noopener">linkedin.com/in/anna-podolian</a>
     </div>
-    <div class="footer-text">Тбилиси, Грузия · удалённо или гибрид · стажировка, проект, полная занятость</div>
+    <div class="footer-text" data-i18n="footer"></div>
   </div>
 </div>
 
 <script>
 /* =====================================================================
-   ДАННЫЕ. Чтобы добавить проект — одна запись в PROJECTS.
+   ТРИ ЯЗЫКА: ru / uk / en. Любое текстовое поле — объект {ru, uk, en}.
+   Чтобы добавить проект — одна запись в PROJECTS, все три языка.
    dir    — направление (ключ из DIRS)
    kind   — "real" (реальный проект) или "study" (учебный, Hillel)
-   title  — название; для реального проекта обычно домен или бренд
-   desc   — одна строка под названием
-   url    — ссылка на сайт/аккаунт/кейс (необязательно)
-   client — для реальных: для кого делала (необязательно)
-   task / did / tools / result — раскрываются по клику (необязательно)
-   imgs   — [{src, alt}] скриншоты внутри карточки (необязательно)
+   title / desc / task / did / tools / result — {ru, uk, en}
+   url    — ссылка на файл/сайт (необязательно)
+   client — для реальных: для кого (необязательно, {ru,uk,en})
+   imgs   — [{src, alt:{ru,uk,en}}] скриншоты (необязательно)
    ===================================================================== */
+const UI = {
+  name:      { ru: 'Анна Подолян', uk: 'Анна Подолян', en: 'Anna Podolian' },
+  title:     { ru: 'Портфолио Анны Подолян', uk: 'Портфоліо Анни Подолян', en: 'Anna Podolian — Portfolio' },
+  heroSub:   { ru: 'PPC-специалист: Google Ads и Meta Ads, веб-аналитика GA4 и GTM; плюс SEO и SMM. Тбилиси, работаю удалённо. Открыта к стажировкам, junior-позициям и проектам.',
+               uk: 'PPC-спеціалістка: Google Ads і Meta Ads, веб-аналітика GA4 і GTM; плюс SEO та SMM. Тбілісі, працюю віддалено. Відкрита до стажувань, junior-позицій і проєктів.',
+               en: 'PPC specialist: Google Ads and Meta Ads, web analytics with GA4 and GTM; plus SEO and SMM. Based in Tbilisi, working remotely. Open to internships, junior roles and projects.' },
+  btnMail:   { ru: 'Написать', uk: 'Написати', en: 'Email me' },
+  mailSubj:  { ru: 'Задача для Анны', uk: 'Задача для Анни', en: 'A task for Anna' },
+  statProjects:  { ru: 'Проектов', uk: 'Проєктів', en: 'Projects' },
+  statDirs:      { ru: 'Направлений', uk: 'Напрямів', en: 'Areas' },
+  statStudy:     { ru: 'Учебных кейсов', uk: 'Навчальних кейсів', en: 'Training cases' },
+  all:       { ru: 'Все', uk: 'Усі', en: 'All' },
+  projects:  { ru: 'Проекты', uk: 'Проєкти', en: 'Projects' },
+  studyTag:  { ru: 'учебный проект · Hillel 2026', uk: 'навчальний проєкт · Hillel 2026', en: 'training project · Hillel 2026' },
+  more:      { ru: 'Подробнее ↓', uk: 'Детальніше ↓', en: 'Details ↓' },
+  less:      { ru: 'Свернуть ↑', uk: 'Згорнути ↑', en: 'Collapse ↑' },
+  open:      { ru: 'Открыть ↗', uk: 'Відкрити ↗', en: 'Open ↗' },
+  task:      { ru: 'Задача', uk: 'Задача', en: 'Task' },
+  did:       { ru: 'Что сделала', uk: 'Що зробила', en: 'What I did' },
+  tools:     { ru: 'Инструменты', uk: 'Інструменти', en: 'Tools' },
+  result:    { ru: 'На выходе', uk: 'Результат', en: 'Outcome' },
+  offerTitle:{ ru: 'Возьму одну задачу бесплатно', uk: 'Візьму одну задачу безкоштовно', en: 'I’ll take one task for free' },
+  offerSub:  { ru: 'Набираю практику на реальных рекламных задачах. Сделаю в срок и отдам результат, даже если дальше не работаем. Условие одно — разрешение показать работу здесь.',
+               uk: 'Набираю практику на реальних рекламних задачах. Зроблю в строк і віддам результат, навіть якщо далі не працюємо. Умова одна — дозвіл показати роботу тут.',
+               en: 'I’m building hands-on experience on real advertising tasks. I’ll deliver on time and hand over the result even if we don’t continue. One condition — permission to show the work here.' },
+  footer:    { ru: 'Тбилиси, Грузия · удалённо или гибрид · стажировка, проект, полная занятость',
+               uk: 'Тбілісі, Грузія · віддалено або гібрид · стажування, проєкт, повна зайнятість',
+               en: 'Tbilisi, Georgia · remote or hybrid · internship, project, full-time' },
+  // множественное число: [1, 2–4, 5+] (en: [1, many])
+  pluralStudy: { ru: ['учебный кейс', 'учебных кейса', 'учебных кейсов'], uk: ['навчальний кейс', 'навчальні кейси', 'навчальних кейсів'], en: ['training case', 'training cases', 'training cases'] },
+  pluralProj:  { ru: ['проект', 'проекта', 'проектов'], uk: ['проєкт', 'проєкти', 'проєктів'], en: ['project', 'projects', 'projects'] },
+};
+
+const OFFERS = [
+  { t: { ru: 'Настройка или ревизия рекламного кабинета', uk: 'Налаштування або ревізія рекламного кабінету', en: 'Ad account setup or audit' },
+    d: { ru: 'Google Ads или Meta Ads: структура кампаний, семантика и аудитории, UTM, минус-слова, что отключить и что докрутить.',
+         uk: 'Google Ads або Meta Ads: структура кампаній, семантика й аудиторії, UTM, мінус-слова, що вимкнути і що докрутити.',
+         en: 'Google Ads or Meta Ads: campaign structure, keywords and audiences, UTM, negative keywords, what to pause and what to fix.' },
+    term: { ru: '3–5 рабочих дней', uk: '3–5 робочих днів', en: '3–5 business days' } },
+  { t: { ru: 'Порядок в аналитике', uk: 'Лад в аналітиці', en: 'Analytics cleanup' },
+    d: { ru: 'GA4 и GTM: события, конверсии, передача в кабинеты, отчёт по источникам заявок.',
+         uk: 'GA4 і GTM: події, конверсії, передача в кабінети, звіт за джерелами заявок.',
+         en: 'GA4 and GTM: events, conversions, import into ad accounts, a report by lead source.' },
+    term: { ru: '3–5 рабочих дней', uk: '3–5 робочих днів', en: '3–5 business days' } },
+  { t: { ru: 'Контент-план на месяц', uk: 'Контент-план на місяць', en: 'One-month content plan' },
+    d: { ru: 'Конкуренты, аудитория, Tone of Voice, рубрики, 30 тем с форматами, календарь.',
+         uk: 'Конкуренти, аудиторія, Tone of Voice, рубрики, 30 тем із форматами, календар.',
+         en: 'Competitors, audience, Tone of Voice, content pillars, 30 topics with formats, a calendar.' },
+    term: { ru: '5 рабочих дней', uk: '5 робочих днів', en: '5 business days' } },
+];
+
+const ABOUT = [
+  { h: { ru: 'Образование', uk: 'Освіта', en: 'Education' },
+    p: [
+      { ru: 'Hillel IT School, курс «Интернет-маркетинг with AI», 42 занятия, январь — сентябрь 2026. Диплом с отличием, сертификат № 56043738.',
+        uk: 'Hillel IT School, курс «Інтернет-маркетинг with AI», 42 заняття, січень — вересень 2026. Диплом з відзнакою, сертифікат № 56043738.',
+        en: 'Hillel IT School, “Internet Marketing with AI” course, 42 sessions, January – September 2026. Diploma with distinction, certificate No. 56043738.' },
+      { ru: 'Одесский государственный экологический университет, «Финансы и кредит», 2002.',
+        uk: 'Одеський державний екологічний університет, «Фінанси і кредит», 2002.',
+        en: 'Odesa State Environmental University, Finance and Credit, 2002.' } ] },
+  { h: { ru: 'Что за спиной', uk: 'Що за плечима', en: 'Background' },
+    p: [
+      { ru: 'Двадцать лет в финансах и операциях транспортных компаний: руководила первичной бухгалтерией центрального офиса и 70 филиалов, четыре года вела собственный бизнес в перевозках, пять лет закрывала финансы польской транспортной компании. Планировать бюджет, сводить цифры и отвечать за результат — в рекламном кабинете задача та же.',
+        uk: 'Двадцять років у фінансах та операціях транспортних компаній: керувала первинною бухгалтерією центрального офісу та 70 філій, чотири роки вела власний бізнес у перевезеннях, п’ять років закривала фінанси польської транспортної компанії. Планувати бюджет, зводити цифри й відповідати за результат — у рекламному кабінеті задача та сама.',
+        en: 'Twenty years in finance and operations at transport companies: ran primary accounting for a head office and 70 branches, four years running my own freight business, five years closing the books for a Polish transport company. Planning a budget, reconciling numbers and answering for results — in an ad account the task is the same.' } ] },
+  { h: { ru: 'Инструменты и языки', uk: 'Інструменти та мови', en: 'Tools & languages' },
+    p: [
+      { ru: 'Google Ads, Meta Business Manager, GA4, Google Tag Manager, Search Console, Screaming Frog, Serpstat, Sitechecker, SimilarWeb, Canva, ChatGPT, Claude, Midjourney, Google Таблицы и Excel.',
+        uk: 'Google Ads, Meta Business Manager, GA4, Google Tag Manager, Search Console, Screaming Frog, Serpstat, Sitechecker, SimilarWeb, Canva, ChatGPT, Claude, Midjourney, Google Таблиці та Excel.',
+        en: 'Google Ads, Meta Business Manager, GA4, Google Tag Manager, Search Console, Screaming Frog, Serpstat, Sitechecker, SimilarWeb, Canva, ChatGPT, Claude, Midjourney, Google Sheets and Excel.' },
+      { ru: 'Русский и украинский — родные, английский — письменный рабочий.',
+        uk: 'Російська та українська — рідні, англійська — письмова робоча.',
+        en: 'Russian and Ukrainian — native; English — working level in writing.' } ] },
+];
+
 const DIRS = {
-  google:    { title: 'PPC · Google Ads',     badge: 'b-green'  },
-  meta:      { title: 'PPC · Meta Ads',       badge: 'b-blue'   },
-  analytics: { title: 'Аналитика: GA4 и GTM', badge: 'b-amber'  },
-  seo:       { title: 'SEO и GEO',            badge: 'b-teal'   },
-  smm:       { title: 'SMM и контент',        badge: 'b-purple' },
-  email:     { title: 'Email и Telegram',     badge: 'b-coral'  },
+  google:    { title: { ru: 'PPC · Google Ads', uk: 'PPC · Google Ads', en: 'PPC · Google Ads' }, badge: 'b-green'  },
+  meta:      { title: { ru: 'PPC · Meta Ads', uk: 'PPC · Meta Ads', en: 'PPC · Meta Ads' },       badge: 'b-blue'   },
+  analytics: { title: { ru: 'Аналитика: GA4 и GTM', uk: 'Аналітика: GA4 і GTM', en: 'Analytics: GA4 & GTM' }, badge: 'b-amber' },
+  seo:       { title: { ru: 'SEO и GEO', uk: 'SEO та GEO', en: 'SEO & GEO' },                   badge: 'b-teal'   },
+  smm:       { title: { ru: 'SMM и контент', uk: 'SMM і контент', en: 'SMM & content' },        badge: 'b-purple' },
+  email:     { title: { ru: 'Email и Telegram', uk: 'Email і Telegram', en: 'Email & Telegram' }, badge: 'b-coral' },
 };
 
 const PROJECTS = [
@@ -249,199 +320,301 @@ const PROJECTS = [
 
   /* ---------- учебные проекты Hillel, 2026 ---------- */
 
-  /* SMM: сквозной проект модуля — апартаменты у океана, Fort Lauderdale */
+  /* Google Ads */
   {
-    dir: 'smm', kind: 'study',
-    title: 'SWOT-анализ бизнеса: апартаменты у океана, Fort Lauderdale',
-    desc: 'Сильные и слабые стороны, возможности и угрозы посуточной аренды апартаментов на первой линии.',
-    url: 'https://docs.google.com/spreadsheets/d/1otWfVUPLnQfKRmvUgrrGn5dT23oggNeE/edit?usp=sharing',
-    task: 'Разложить бизнес по SWOT до того, как писать стратегию продвижения.',
-    did: 'Семь сильных сторон — первая линия, инфраструктура, круглосуточная охрана и поддержка, качество апартаментов, длинный сезон; шесть слабых — от отсутствия маркетинга до парковки и сезонности; возможности — премиум-сегмент, B2B, блогеры, расширение фонда; десять угроз от экономики до мошенничества.',
-    tools: 'Google Таблицы',
-    result: 'Матрица SWOT, из которой выросли анализ конкурентов и контент-план ниже.',
+    dir: 'google', kind: 'study',
+    title: { ru: 'Семантика для поисковой рекламы: женская обувь', uk: 'Семантика для пошукової реклами: жіноче взуття', en: 'Search campaign keywords: women’s footwear' },
+    desc:  { ru: '918 запросов, 26 групп объявлений, разделение на информационные и коммерческие, минус-слова.',
+             uk: '918 запитів, 26 груп оголошень, поділ на інформаційні та комерційні, мінус-слова.',
+             en: '918 keywords, 26 ad groups, split into informational and commercial intent, negative keywords.' },
+    url: 'https://docs.google.com/spreadsheets/d/1b5gv95ptPx138-knv6zHQ-ctFjViqH_JPUVUhla2Gjc/edit?usp=sharing',
+    task:  { ru: 'Собрать ядро под поисковую кампанию интернет-магазина женской обуви и разложить его по группам объявлений.',
+             uk: 'Зібрати ядро під пошукову кампанію інтернет-магазину жіночого взуття та розкласти його по групах оголошень.',
+             en: 'Build a keyword set for a women’s footwear store’s Search campaign and organise it into ad groups.' },
+    did:   { ru: 'Собрала 918 запросов, разделила по категориям — кроссовки, босоножки, туфли, сандалии, балетки, эспадрильи — и по интенту на информационные и коммерческие «купить», получилось 26 групп. Отдельный лист минус-слов: маркетплейсы, конкуренты, нецелевые товары.',
+             uk: 'Зібрала 918 запитів, розділила за категоріями — кросівки, босоніжки, туфлі, сандалі, балетки, еспадрильї — і за інтентом на інформаційні та комерційні «купити», вийшло 26 груп. Окремий аркуш мінус-слів: маркетплейси, конкуренти, нецільові товари.',
+             en: 'Collected 918 keywords, grouped them by category — sneakers, sandals, pumps, flats, espadrilles — and by intent into informational and commercial “buy” queries: 26 ad groups. A separate negative-keyword list: marketplaces, competitors, off-target products.' },
+    tools: { ru: 'Keyword Planner, Google Таблицы', uk: 'Keyword Planner, Google Таблиці', en: 'Keyword Planner, Google Sheets' },
+    result:{ ru: 'Структура групп объявлений, готовая к переносу в Google Ads.', uk: 'Структура груп оголошень, готова до перенесення в Google Ads.', en: 'An ad-group structure ready to be loaded into Google Ads.' },
   },
   {
-    dir: 'smm', kind: 'study',
-    title: 'Анализ конкурентов в соцсетях: отели Fort Lauderdale',
-    desc: 'Три курортных отеля во Флориде: подписчики, вовлечённость, частота постов, качество контента, реклама.',
-    url: 'https://docs.google.com/spreadsheets/d/1QxkEyq8nP127Poejbfd3DAeBhv8ufFLSimj7drwDHUo/edit?usp=sharing',
-    task: 'Понять, как ведут соцсети прямые конкуренты на первой линии, и где у них слабые места.',
-    did: 'Разобрала Facebook и Instagram трёх отелей (Ocean Sky, Ocean Manor, Westin Fort Lauderdale Beach): аудитория, взаимодействия и посты за месяц, ER на пост, оценка качества контента по 10-балльной шкале, по пять сильных и слабых сторон каждого — инфраструктура, локация, цены, отзывы гостей, наличие рекламы.',
-    tools: 'Facebook, Instagram, Google Таблицы',
-    result: 'Сравнительная таблица с ER: у лидера по подписчикам (31 тыс.) вовлечённость в 13 раз ниже, чем у самого маленького отеля (9 тыс.) — размер аудитории не равен её активности.',
+    dir: 'google', kind: 'study',
+    title: { ru: 'Медийная кампания в Google Ads: бытовая техника', uk: 'Медійна кампанія в Google Ads: побутова техніка', en: 'Google Display campaign: home appliances' },
+    desc:  { ru: 'Кампания в КМС с тремя группами по типу таргетинга — особые аудитории, интересы, темы — и адаптивными объявлениями.',
+             uk: 'Кампанія в КМС із трьома групами за типом таргетингу — особливі аудиторії, інтереси, теми — та адаптивними оголошеннями.',
+             en: 'A Display campaign with three ad groups by targeting type — custom audiences, interests, topics — and responsive display ads.' },
+    url: 'https://drive.google.com/file/d/1zyDpKwwIPQm-DrSR6hD3KklIl6CG5dVh/view?usp=sharing',
+    task:  { ru: 'Собрать медийную кампанию магазина бытовой техники под весеннюю акцию и проверить одно объявление на трёх типах таргетинга.',
+             uk: 'Зібрати медійну кампанію магазину побутової техніки під весняну акцію та перевірити одне оголошення на трьох типах таргетингу.',
+             en: 'Build a Display campaign for an appliance store’s spring promotion and test one ad across three targeting types.' },
+    did:   { ru: 'Кампания GDN, три группы объявлений — особые аудитории, интересы, темы — с одинаковыми адаптивными медийными объявлениями «весна на максимум: акции и скидки»; объявления прошли модерацию.',
+             uk: 'Кампанія GDN, три групи оголошень — особливі аудиторії, інтереси, теми — з однаковими адаптивними медійними оголошеннями «весна на максимум: акції та знижки»; оголошення пройшли модерацію.',
+             en: 'A GDN campaign with three ad groups — custom audiences, interests, topics — running the same responsive display ads (“spring to the max: deals and discounts”); the ads passed review.' },
+    tools: { ru: 'Google Ads', uk: 'Google Ads', en: 'Google Ads' },
+    result:{ ru: 'Настроенный кабинет: структура, таргетинги, адаптивные объявления. Учебный аккаунт без бюджета — показов не было, на скриншоте структура и статусы модерации.',
+             uk: 'Налаштований кабінет: структура, таргетинги, адаптивні оголошення. Навчальний акаунт без бюджету — показів не було, на скриншоті структура та статуси модерації.',
+             en: 'A configured account: structure, targeting, responsive ads. A training account with no budget — no impressions; the screenshot shows the structure and review statuses.' },
+    imgs: [{ src: 'gads.jpg', alt: { ru: 'Google Ads: три адаптивных медийных объявления в трёх группах, статус «Допущено»', uk: 'Google Ads: три адаптивні медійні оголошення у трьох групах, статус «Допущено»', en: 'Google Ads: three responsive display ads in three ad groups, status “Approved”' } }],
   },
   {
-    dir: 'smm', kind: 'study',
-    title: 'Контент-план на месяц и сетка сторис',
-    desc: 'Апрель для аккаунта апартаментов: 11 постов по четырём рубрикам и недельная сетка сторис с темами и временем выхода.',
-    url: 'https://docs.google.com/spreadsheets/d/1_DqaXVJnOfRj-E7V4b8qkQjYwZx6wLYjg7M6afQmRO0/edit?usp=sharing',
-    task: 'Расписать месяц публикаций так, чтобы продающий контент не давил, а развлекательный работал на доверие.',
-    did: 'Календарь на апрель: 11 постов, рубрики информационная / продающая / развлекательная / опрос, формат каждого (текст, фото, видео), тема и посыл; колонки под итоги месяца — охват, взаимодействия, клики, продажи. Отдельный лист — сетка сторис на неделю: количество в день, рубрика, тема, время выхода.',
-    tools: 'Google Таблицы',
-    result: 'Календарь с полями под метрики — план и отчёт в одном файле.',
+    dir: 'google', kind: 'study',
+    title: { ru: 'Performance Max для интернет-магазина косметики Brocard', uk: 'Performance Max для інтернет-магазину косметики Brocard', en: 'Performance Max for the Brocard cosmetics store' },
+    desc:  { ru: 'Кампания PMax под brocard.ua: заголовки и описания, дополнительные ссылки на категории, кнопка звонка — прошла модерацию.',
+             uk: 'Кампанія PMax під brocard.ua: заголовки й описи, додаткові посилання на категорії, кнопка дзвінка — пройшла модерацію.',
+             en: 'A PMax campaign for brocard.ua: headlines and descriptions, sitelinks to categories, a call button — passed review.' },
+    task:  { ru: 'Собрать кампанию Performance Max для магазина косметики и парфюмерии: один набор объектов, который Google показывает во всех своих плейсментах.',
+             uk: 'Зібрати кампанію Performance Max для магазину косметики та парфумерії: один набір об’єктів, який Google показує в усіх своїх плейсментах.',
+             en: 'Build a Performance Max campaign for a cosmetics and perfume store: one asset group that Google serves across all its placements.' },
+    did:   { ru: 'Настроила кампанию PMax под brocard.ua: заголовки и описания на украинском («швидка доставка — найкращий вибір косметики», бесплатная доставка, рассрочка, лимитированные издания), дополнительные ссылки на категории — подарочные наборы, макияж, мужская парфюмерия, уход за телом, — кнопка «Позвонить». Объявления допущены модерацией.',
+             uk: 'Налаштувала кампанію PMax під brocard.ua: заголовки й описи українською («швидка доставка — найкращий вибір косметики», безкоштовна доставка, розстрочка, лімітовані видання), додаткові посилання на категорії — подарункові набори, макіяж, чоловіча парфумерія, догляд за тілом, — кнопка «Зателефонувати». Оголошення допущені модерацією.',
+             en: 'Set up a PMax campaign for brocard.ua: Ukrainian headlines and descriptions (“fast delivery — the best choice of cosmetics”, free shipping, instalments, limited editions), sitelinks to categories — gift sets, make-up, men’s fragrance, body care — and a call button. Ads approved by review.' },
+    tools: { ru: 'Google Ads — Performance Max', uk: 'Google Ads — Performance Max', en: 'Google Ads — Performance Max' },
+    result:{ ru: 'Готовая кампания со статусом «Допущено». Учебный аккаунт без бюджета, показов нет; на скриншоте — предпросмотр объявления в поиске Google.',
+             uk: 'Готова кампанія зі статусом «Допущено». Навчальний акаунт без бюджету, показів немає; на скриншоті — попередній перегляд оголошення в пошуку Google.',
+             en: 'A finished campaign with “Approved” status. Training account with no budget, no impressions; the screenshot shows the ad preview in Google Search.' },
+    imgs: [{ src: 'pmax_brocard.jpg', alt: { ru: 'Google Ads: кампания Performance Max для brocard.ua, статус «Допущено», предпросмотр поискового объявления', uk: 'Google Ads: кампанія Performance Max для brocard.ua, статус «Допущено», попередній перегляд пошукового оголошення', en: 'Google Ads: Performance Max campaign for brocard.ua, status “Approved”, Search ad preview' } }],
+  },
+  {
+    dir: 'google', kind: 'study',
+    title: { ru: 'Сравнение трёх кампаний: CTR, CPC и стоимость конверсии', uk: 'Порівняння трьох кампаній: CTR, CPC і вартість конверсії', en: 'Comparing three campaigns: CTR, CPC and cost per conversion' },
+    desc:  { ru: 'Расчёт метрик по показам, кликам, расходу и конверсиям — какая кампания дешевле приводит клиента.',
+             uk: 'Розрахунок метрик за показами, кліками, витратами та конверсіями — яка кампанія дешевше приводить клієнта.',
+             en: 'Metrics calculated from impressions, clicks, spend and conversions — which campaign brings a customer cheaper.' },
+    url: 'https://docs.google.com/spreadsheets/d/1r_nlFutfousbqR_1I3jQFdvmD6Kqr39urnHHwXgyBsI/edit?usp=sharing',
+    task:  { ru: 'По сырым данным трёх кампаний посчитать, какая эффективнее, и объяснить почему.',
+             uk: 'За сирими даними трьох кампаній порахувати, яка ефективніша, і пояснити чому.',
+             en: 'From raw data of three campaigns, work out which one is more efficient and explain why.' },
+    did:   { ru: 'По показам, кликам, расходу и конверсиям рассчитала CTR, CPC и стоимость конверсии для каждой кампании.',
+             uk: 'За показами, кліками, витратами та конверсіями розрахувала CTR, CPC і вартість конверсії для кожної кампанії.',
+             en: 'Calculated CTR, CPC and cost per conversion for each campaign from impressions, clicks, spend and conversions.' },
+    tools: { ru: 'Google Таблицы', uk: 'Google Таблиці', en: 'Google Sheets' },
+    result:{ ru: 'Кампания с самым большим охватом (15 000 показов) оказалась самой дорогой — стоимость конверсии 15 против 5 у первой: больше показов не значит лучше.',
+             uk: 'Кампанія з найбільшим охопленням (15 000 показів) виявилася найдорожчою — вартість конверсії 15 проти 5 у першої: більше показів не означає краще.',
+             en: 'The campaign with the widest reach (15,000 impressions) turned out the most expensive — cost per conversion 15 vs 5 for the first one: more impressions doesn’t mean better.' },
   },
 
   /* Meta Ads — материалов пока нет, описание по программе курса */
   {
     dir: 'meta', kind: 'study',
-    title: 'Запуск таргетированной рекламы в Meta',
-    desc: 'Кабинет, в котором результаты кампаний можно сравнивать между собой, а не смотреть в одну общую цифру.',
-    task: 'Собрать рекламный кабинет со сравнимой структурой кампаний.',
-    did: 'Настроила Business Manager, выстроила структуру «кампания — группа — объявление», собрала аудитории (интересы, похожие, ретаргет), подготовила креативы под ленту, Stories и Reels, разметила всё UTM-метками.',
-    tools: 'Meta Business Manager, Ads Manager, Canva, компоновщик UTM',
-    result: 'Рабочий кабинет со структурой кампаний и разбор метрик: охват, CPM, CTR, цена результата.',
-  },
-
-  /* Google Ads */
-  {
-    dir: 'google', kind: 'study',
-    title: 'Семантика для поисковой рекламы: женская обувь',
-    desc: '918 запросов, 26 групп объявлений, разделение на информационные и коммерческие, минус-слова.',
-    url: 'https://docs.google.com/spreadsheets/d/1b5gv95ptPx138-knv6zHQ-ctFjViqH_JPUVUhla2Gjc/edit?usp=sharing',
-    task: 'Собрать ядро под поисковую кампанию интернет-магазина женской обуви и разложить его по группам объявлений.',
-    did: 'Собрала 918 запросов, разделила по категориям — кроссовки, босоножки, туфли, сандалии, балетки, эспадрильи — и по интенту на информационные и коммерческие «купить», получилось 26 групп. Отдельный лист минус-слов: маркетплейсы, конкуренты, нецелевые товары.',
-    tools: 'Keyword Planner, Google Таблицы',
-    result: 'Структура групп объявлений, готовая к переносу в Google Ads.',
-  },
-  {
-    dir: 'google', kind: 'study',
-    title: 'Медийная кампания в Google Ads: бытовая техника',
-    desc: 'Кампания в КМС с тремя группами по типу таргетинга — особые аудитории, интересы, темы — и адаптивными объявлениями.',
-    url: 'https://drive.google.com/file/d/1zyDpKwwIPQm-DrSR6hD3KklIl6CG5dVh/view?usp=sharing',
-    task: 'Собрать медийную кампанию магазина бытовой техники под весеннюю акцию и проверить одно объявление на трёх типах таргетинга.',
-    did: 'Кампания GDN, три группы объявлений — особые аудитории, интересы, темы — с одинаковыми адаптивными медийными объявлениями «весна на максимум: акции и скидки»; объявления прошли модерацию.',
-    tools: 'Google Ads',
-    result: 'Настроенный кабинет: структура, таргетинги, адаптивные объявления. Учебный аккаунт без бюджета — показов не было, на скриншоте структура и статусы модерации.',
-    imgs: [{ src: 'gads.jpg', alt: 'Google Ads: три адаптивных медийных объявления в трёх группах, статус «Допущено»' }],
-  },
-  {
-    dir: 'google', kind: 'study',
-    title: 'Performance Max для интернет-магазина косметики Brocard',
-    desc: 'Кампания PMax под brocard.ua: заголовки и описания, дополнительные ссылки на категории, кнопка звонка — прошла модерацию.',
-    task: 'Собрать кампанию Performance Max для магазина косметики и парфюмерии: один набор объектов, который Google показывает во всех своих плейсментах.',
-    did: 'Настроила кампанию PMax под brocard.ua: заголовки и описания на украинском («швидка доставка — найкращий вибір косметики», бесплатная доставка, рассрочка, лимитированные издания), дополнительные ссылки на категории — подарочные наборы, макияж, мужская парфюмерия, уход за телом, — кнопка «Позвонить». Объявления допущены модерацией.',
-    tools: 'Google Ads — Performance Max',
-    result: 'Готовая кампания со статусом «Допущено». Учебный аккаунт без бюджета, показов нет; на скриншоте — предпросмотр объявления в поиске Google.',
-    imgs: [{ src: 'pmax_brocard.jpg', alt: 'Google Ads: кампания Performance Max для brocard.ua, статус «Допущено», предпросмотр поискового объявления' }],
-  },
-  {
-    dir: 'google', kind: 'study',
-    title: 'Сравнение трёх кампаний: CTR, CPC и стоимость конверсии',
-    desc: 'Расчёт метрик по показам, кликам, расходу и конверсиям — какая кампания дешевле приводит клиента.',
-    url: 'https://docs.google.com/spreadsheets/d/1r_nlFutfousbqR_1I3jQFdvmD6Kqr39urnHHwXgyBsI/edit?usp=sharing',
-    task: 'По сырым данным трёх кампаний посчитать, какая эффективнее, и объяснить почему.',
-    did: 'По показам, кликам, расходу и конверсиям рассчитала CTR, CPC и стоимость конверсии для каждой кампании.',
-    tools: 'Google Таблицы',
-    result: 'Кампания с самым большим охватом (15 000 показов) оказалась самой дорогой — стоимость конверсии 15 против 5 у первой: больше показов не значит лучше.',
+    title: { ru: 'Запуск таргетированной рекламы в Meta', uk: 'Запуск таргетованої реклами в Meta', en: 'Launching targeted ads in Meta' },
+    desc:  { ru: 'Кабинет, в котором результаты кампаний можно сравнивать между собой, а не смотреть в одну общую цифру.',
+             uk: 'Кабінет, у якому результати кампаній можна порівнювати між собою, а не дивитися в одну загальну цифру.',
+             en: 'An account where campaign results can be compared to each other rather than read as one blended number.' },
+    task:  { ru: 'Собрать рекламный кабинет со сравнимой структурой кампаний.', uk: 'Зібрати рекламний кабінет зі зіставною структурою кампаній.', en: 'Build an ad account with a comparable campaign structure.' },
+    did:   { ru: 'Настроила Business Manager, выстроила структуру «кампания — группа — объявление», собрала аудитории (интересы, похожие, ретаргет), подготовила креативы под ленту, Stories и Reels, разметила всё UTM-метками.',
+             uk: 'Налаштувала Business Manager, вибудувала структуру «кампанія — група — оголошення», зібрала аудиторії (інтереси, схожі, ретаргет), підготувала креативи під стрічку, Stories і Reels, розмітила все UTM-мітками.',
+             en: 'Set up Business Manager, built a campaign → ad set → ad structure, created audiences (interests, lookalike, retargeting), prepared creatives for feed, Stories and Reels, tagged everything with UTMs.' },
+    tools: { ru: 'Meta Business Manager, Ads Manager, Canva, компоновщик UTM', uk: 'Meta Business Manager, Ads Manager, Canva, UTM-білдер', en: 'Meta Business Manager, Ads Manager, Canva, UTM builder' },
+    result:{ ru: 'Рабочий кабинет со структурой кампаний и разбор метрик: охват, CPM, CTR, цена результата.',
+             uk: 'Робочий кабінет зі структурою кампаній і розбір метрик: охоплення, CPM, CTR, ціна результату.',
+             en: 'A working account with campaign structure and a breakdown of metrics: reach, CPM, CTR, cost per result.' },
   },
 
   /* Аналитика */
   {
     dir: 'analytics', kind: 'study',
-    title: 'Аналитика интернет-магазина: GA4, GTM, события и аудитории',
-    desc: 'Учебный магазин электроники: события покупки через Tag Manager, ключевое событие purchase, аудитории для ремаркетинга.',
+    title: { ru: 'Аналитика интернет-магазина: GA4, GTM, события и аудитории', uk: 'Аналітика інтернет-магазину: GA4, GTM, події та аудиторії', en: 'E-commerce analytics: GA4, GTM, events and audiences' },
+    desc:  { ru: 'Учебный магазин электроники: события покупки через Tag Manager, ключевое событие purchase, аудитории для ремаркетинга.',
+             uk: 'Навчальний магазин електроніки: події покупки через Tag Manager, ключова подія purchase, аудиторії для ремаркетингу.',
+             en: 'A training electronics store: purchase events via Tag Manager, purchase as a key event, remarketing audiences.' },
     url: 'https://drive.google.com/file/d/1zZDS_k-5iHkt2XoarenusTir7O7eOw8K/view?usp=sharing',
-    task: 'Настроить учёт действий покупателя на учебном сайте — от просмотра до покупки.',
-    did: 'Подключила GA4 через Google Tag Manager, настроила события page_view, user_engagement, add_to_cart, begin_checkout, form_start, purchase; purchase отмечен ключевым событием; проверила в отчёте реального времени. Собрала аудитории: Purchasers, «корзина» (добавили, но не купили), гео.',
-    tools: 'Google Tag Manager, GA4, Tag Assistant, Weblium',
-    result: 'Работающая связка GTM → GA4 с воронкой покупки и аудиториями под ремаркетинг.',
+    task:  { ru: 'Настроить учёт действий покупателя на учебном сайте — от просмотра до покупки.', uk: 'Налаштувати облік дій покупця на навчальному сайті — від перегляду до покупки.', en: 'Track the shopper’s actions on a training site — from page view to purchase.' },
+    did:   { ru: 'Подключила GA4 через Google Tag Manager, настроила события page_view, user_engagement, add_to_cart, begin_checkout, form_start, purchase; purchase отмечен ключевым событием; проверила в отчёте реального времени. Собрала аудитории: Purchasers, «корзина» (добавили, но не купили), гео.',
+             uk: 'Підключила GA4 через Google Tag Manager, налаштувала події page_view, user_engagement, add_to_cart, begin_checkout, form_start, purchase; purchase позначено ключовою подією; перевірила у звіті реального часу. Зібрала аудиторії: Purchasers, «кошик» (додали, але не купили), гео.',
+             en: 'Connected GA4 via Google Tag Manager, set up page_view, user_engagement, add_to_cart, begin_checkout, form_start and purchase events; marked purchase as a key event; verified in the real-time report. Built audiences: Purchasers, “cart” (added but didn’t buy), geo.' },
+    tools: { ru: 'Google Tag Manager, GA4, Tag Assistant, Weblium', uk: 'Google Tag Manager, GA4, Tag Assistant, Weblium', en: 'Google Tag Manager, GA4, Tag Assistant, Weblium' },
+    result:{ ru: 'Работающая связка GTM → GA4 с воронкой покупки и аудиториями под ремаркетинг.', uk: 'Робоча зв’язка GTM → GA4 з воронкою покупки та аудиторіями під ремаркетинг.', en: 'A working GTM → GA4 setup with a purchase funnel and remarketing audiences.' },
     imgs: [
-      { src: 'ga4_rt.jpg', alt: 'GA4, отчёт реального времени: события page_view, add_to_cart, begin_checkout, form_start, purchase' },
-      { src: 'ga4_aud.jpg', alt: 'GA4, аудитории: Гео, корзина, All Users, Purchasers' },
+      { src: 'ga4_rt.jpg',  alt: { ru: 'GA4, отчёт реального времени: события page_view, add_to_cart, begin_checkout, form_start, purchase', uk: 'GA4, звіт реального часу: події page_view, add_to_cart, begin_checkout, form_start, purchase', en: 'GA4 real-time report: page_view, add_to_cart, begin_checkout, form_start, purchase events' } },
+      { src: 'ga4_aud.jpg', alt: { ru: 'GA4, аудитории: Гео, корзина, All Users, Purchasers', uk: 'GA4, аудиторії: Гео, кошик, All Users, Purchasers', en: 'GA4 audiences: Geo, cart, All Users, Purchasers' } },
     ],
   },
 
   /* SEO */
   {
     dir: 'seo', kind: 'study',
-    title: 'Семантическое ядро интернет-магазина одежды Solmar',
-    desc: '280 запросов по 23 разделам каталога solmar.com.ua с типом каждого: маркерный, коммерческий, уточняющий, геозависимый.',
+    title: { ru: 'Семантическое ядро интернет-магазина одежды Solmar', uk: 'Семантичне ядро інтернет-магазину одягу Solmar', en: 'Semantic core for the Solmar apparel store' },
+    desc:  { ru: '280 запросов по 23 разделам каталога solmar.com.ua с типом каждого: маркерный, коммерческий, уточняющий, геозависимый.',
+             uk: '280 запитів по 23 розділах каталогу solmar.com.ua з типом кожного: маркерний, комерційний, уточнювальний, геозалежний.',
+             en: '280 keywords across 23 catalogue sections of solmar.com.ua, each typed: marker, commercial, refining, geo-dependent.' },
     url: 'https://docs.google.com/spreadsheets/d/1f2v9v6GnBUbCy1E1YwzMRKmTdtD2eEN0/edit?usp=sharing',
-    task: 'Собрать ядро под структуру реального сайта так, чтобы каждая страница каталога получила свой набор запросов.',
-    did: 'Прошла по 23 разделам — от главной и джинсов до мужской линии, парфюмерии и подарочной упаковки; для каждого подобрала запросы и разметила тип: 23 маркерных, 101 коммерческий, 135 уточняющих, 21 геозависимый.',
-    tools: 'Google Таблицы, инструменты подбора запросов курса',
-    result: 'Карта «страница → запросы → тип», основа для мета-тегов и текстов.',
+    task:  { ru: 'Собрать ядро под структуру реального сайта так, чтобы каждая страница каталога получила свой набор запросов.',
+             uk: 'Зібрати ядро під структуру реального сайту так, щоб кожна сторінка каталогу отримала свій набір запитів.',
+             en: 'Build a keyword core around a real site’s structure so that every catalogue page gets its own set of queries.' },
+    did:   { ru: 'Прошла по 23 разделам — от главной и джинсов до мужской линии, парфюмерии и подарочной упаковки; для каждого подобрала запросы и разметила тип: 23 маркерных, 101 коммерческий, 135 уточняющих, 21 геозависимый.',
+             uk: 'Пройшла по 23 розділах — від головної та джинсів до чоловічої лінії, парфумерії та подарункового пакування; для кожного дібрала запити й розмітила тип: 23 маркерні, 101 комерційний, 135 уточнювальних, 21 геозалежний.',
+             en: 'Went through 23 sections — from the homepage and jeans to the men’s line, perfumery and gift wrapping; picked keywords for each and typed them: 23 marker, 101 commercial, 135 refining, 21 geo-dependent.' },
+    tools: { ru: 'Google Таблицы, инструменты подбора запросов курса', uk: 'Google Таблиці, інструменти добору запитів курсу', en: 'Google Sheets, the course’s keyword research tools' },
+    result:{ ru: 'Карта «страница → запросы → тип», основа для мета-тегов и текстов.', uk: 'Карта «сторінка → запити → тип», основа для мета-тегів і текстів.', en: 'A page → keywords → type map, the basis for meta tags and copy.' },
   },
   {
     dir: 'seo', kind: 'study',
-    title: 'Кластеризация семантики: телескопические вытяжки, Foxtrot',
-    desc: '99 запросов с частотностью, 23 кластера, 17 посадочных страниц и фильтров каталога.',
+    title: { ru: 'Кластеризация семантики: телескопические вытяжки, Foxtrot', uk: 'Кластеризація семантики: телескопічні витяжки, Foxtrot', en: 'Keyword clustering: telescopic cooker hoods, Foxtrot' },
+    desc:  { ru: '99 запросов с частотностью, 23 кластера, 17 посадочных страниц и фильтров каталога.',
+             uk: '99 запитів із частотністю, 23 кластери, 17 посадкових сторінок і фільтрів каталогу.',
+             en: '99 keywords with search volume, 23 clusters, 17 landing pages and catalogue filters.' },
     url: 'https://docs.google.com/spreadsheets/d/1yxq8xINi-RG7DSxo74kRIzBkMML03mUn/edit?usp=sharing',
-    task: 'Разложить запросы одной категории по кластерам и привязать каждый к существующей странице или фильтру каталога.',
-    did: 'Собрала 99 запросов с частотностью на русском и украинском, объединила в 23 кластера — общие, коммерческие, «цена», по размеру (50/60/90 см), по 11 брендам, с угольным фильтром, тихие, гео Киев / Харьков / Днепр, информационные — и назначила каждому URL категории или фильтра foxtrot.com.ua.',
-    tools: 'Google Таблицы, инструменты подбора запросов курса',
-    result: 'Карта посадочных страниц: по ней пишутся мета-теги и видно, каких фильтров в каталоге не хватает.',
+    task:  { ru: 'Разложить запросы одной категории по кластерам и привязать каждый к существующей странице или фильтру каталога.',
+             uk: 'Розкласти запити однієї категорії по кластерах і прив’язати кожен до наявної сторінки або фільтра каталогу.',
+             en: 'Cluster the keywords of one category and map each cluster to an existing catalogue page or filter.' },
+    did:   { ru: 'Собрала 99 запросов с частотностью на русском и украинском, объединила в 23 кластера — общие, коммерческие, «цена», по размеру (50/60/90 см), по 11 брендам, с угольным фильтром, тихие, гео Киев / Харьков / Днепр, информационные — и назначила каждому URL категории или фильтра foxtrot.com.ua.',
+             uk: 'Зібрала 99 запитів із частотністю російською та українською, об’єднала у 23 кластери — загальні, комерційні, «ціна», за розміром (50/60/90 см), за 11 брендами, з вугільним фільтром, тихі, гео Київ / Харків / Дніпро, інформаційні — і призначила кожному URL категорії або фільтра foxtrot.com.ua.',
+             en: 'Collected 99 Russian and Ukrainian keywords with search volume, grouped them into 23 clusters — generic, commercial, “price”, by size (50/60/90 cm), by 11 brands, with charcoal filter, quiet, geo Kyiv / Kharkiv / Dnipro, informational — and assigned each a category or filter URL on foxtrot.com.ua.' },
+    tools: { ru: 'Google Таблицы, инструменты подбора запросов курса', uk: 'Google Таблиці, інструменти добору запитів курсу', en: 'Google Sheets, the course’s keyword research tools' },
+    result:{ ru: 'Карта посадочных страниц: по ней пишутся мета-теги и видно, каких фильтров в каталоге не хватает.', uk: 'Карта посадкових сторінок: за нею пишуться мета-теги і видно, яких фільтрів у каталозі бракує.', en: 'A landing-page map: meta tags are written from it, and it shows which catalogue filters are missing.' },
+  },
+
+  /* SMM: сквозной проект модуля — апартаменты у океана, Fort Lauderdale */
+  {
+    dir: 'smm', kind: 'study',
+    title: { ru: 'SWOT-анализ бизнеса: апартаменты у океана, Fort Lauderdale', uk: 'SWOT-аналіз бізнесу: апартаменти біля океану, Fort Lauderdale', en: 'Business SWOT: oceanfront apartments, Fort Lauderdale' },
+    desc:  { ru: 'Сильные и слабые стороны, возможности и угрозы посуточной аренды апартаментов на первой линии.',
+             uk: 'Сильні та слабкі сторони, можливості та загрози подобової оренди апартаментів на першій лінії.',
+             en: 'Strengths, weaknesses, opportunities and threats of a beachfront short-term rental business.' },
+    url: 'https://docs.google.com/spreadsheets/d/1otWfVUPLnQfKRmvUgrrGn5dT23oggNeE/edit?usp=sharing',
+    task:  { ru: 'Разложить бизнес по SWOT до того, как писать стратегию продвижения.', uk: 'Розкласти бізнес за SWOT перш ніж писати стратегію просування.', en: 'Lay the business out as a SWOT before writing a promotion strategy.' },
+    did:   { ru: 'Семь сильных сторон — первая линия, инфраструктура, круглосуточная охрана и поддержка, качество апартаментов, длинный сезон; шесть слабых — от отсутствия маркетинга до парковки и сезонности; возможности — премиум-сегмент, B2B, блогеры, расширение фонда; десять угроз от экономики до мошенничества.',
+             uk: 'Сім сильних сторін — перша лінія, інфраструктура, цілодобова охорона й підтримка, якість апартаментів, довгий сезон; шість слабких — від відсутності маркетингу до паркінгу та сезонності; можливості — преміум-сегмент, B2B, блогери, розширення фонду; десять загроз від економіки до шахрайства.',
+             en: 'Seven strengths — beachfront location, infrastructure, 24/7 security and support, apartment quality, a long season; six weaknesses — from no marketing to parking and seasonality; opportunities — premium segment, B2B, bloggers, more units; ten threats from the economy to fraud.' },
+    tools: { ru: 'Google Таблицы', uk: 'Google Таблиці', en: 'Google Sheets' },
+    result:{ ru: 'Матрица SWOT, из которой выросли анализ конкурентов и контент-план ниже.', uk: 'Матриця SWOT, з якої виросли аналіз конкурентів і контент-план нижче.', en: 'A SWOT matrix that the competitor analysis and content plan below grew out of.' },
+  },
+  {
+    dir: 'smm', kind: 'study',
+    title: { ru: 'Анализ конкурентов в соцсетях: отели Fort Lauderdale', uk: 'Аналіз конкурентів у соцмережах: готелі Fort Lauderdale', en: 'Social media competitor analysis: Fort Lauderdale hotels' },
+    desc:  { ru: 'Три курортных отеля во Флориде: подписчики, вовлечённость, частота постов, качество контента, реклама.',
+             uk: 'Три курортні готелі у Флориді: підписники, залученість, частота постів, якість контенту, реклама.',
+             en: 'Three Florida resort hotels: followers, engagement, posting frequency, content quality, advertising.' },
+    url: 'https://docs.google.com/spreadsheets/d/1QxkEyq8nP127Poejbfd3DAeBhv8ufFLSimj7drwDHUo/edit?usp=sharing',
+    task:  { ru: 'Понять, как ведут соцсети прямые конкуренты на первой линии, и где у них слабые места.', uk: 'Зрозуміти, як ведуть соцмережі прямі конкуренти на першій лінії, і де в них слабкі місця.', en: 'See how direct beachfront competitors run their social media and where their weak spots are.' },
+    did:   { ru: 'Разобрала Facebook и Instagram трёх отелей (Ocean Sky, Ocean Manor, Westin Fort Lauderdale Beach): аудитория, взаимодействия и посты за месяц, ER на пост, оценка качества контента по 10-балльной шкале, по пять сильных и слабых сторон каждого — инфраструктура, локация, цены, отзывы гостей, наличие рекламы.',
+             uk: 'Розібрала Facebook та Instagram трьох готелів (Ocean Sky, Ocean Manor, Westin Fort Lauderdale Beach): аудиторія, взаємодії та пости за місяць, ER на пост, оцінка якості контенту за 10-бальною шкалою, по п’ять сильних і слабких сторін кожного — інфраструктура, локація, ціни, відгуки гостей, наявність реклами.',
+             en: 'Reviewed the Facebook and Instagram of three hotels (Ocean Sky, Ocean Manor, Westin Fort Lauderdale Beach): audience, monthly interactions and posts, ER per post, content quality on a 10-point scale, five strengths and five weaknesses each — infrastructure, location, prices, guest reviews, advertising.' },
+    tools: { ru: 'Facebook, Instagram, Google Таблицы', uk: 'Facebook, Instagram, Google Таблиці', en: 'Facebook, Instagram, Google Sheets' },
+    result:{ ru: 'Сравнительная таблица с ER: у лидера по подписчикам (31 тыс.) вовлечённость в 13 раз ниже, чем у самого маленького отеля (9 тыс.) — размер аудитории не равен её активности.',
+             uk: 'Порівняльна таблиця з ER: у лідера за підписниками (31 тис.) залученість у 13 разів нижча, ніж у найменшого готелю (9 тис.) — розмір аудиторії не дорівнює її активності.',
+             en: 'A comparison table with ER: the follower leader (31k) has 13× lower engagement than the smallest hotel (9k) — audience size isn’t audience activity.' },
+  },
+  {
+    dir: 'smm', kind: 'study',
+    title: { ru: 'Контент-план на месяц и сетка сторис', uk: 'Контент-план на місяць і сітка сторіс', en: 'One-month content plan and stories grid' },
+    desc:  { ru: 'Апрель для аккаунта апартаментов: 11 постов по четырём рубрикам и недельная сетка сторис с темами и временем выхода.',
+             uk: 'Квітень для акаунта апартаментів: 11 постів за чотирма рубриками та тижнева сітка сторіс із темами й часом виходу.',
+             en: 'April for the apartments’ account: 11 posts across four content pillars and a weekly stories grid with topics and posting times.' },
+    url: 'https://docs.google.com/spreadsheets/d/1_DqaXVJnOfRj-E7V4b8qkQjYwZx6wLYjg7M6afQmRO0/edit?usp=sharing',
+    task:  { ru: 'Расписать месяц публикаций так, чтобы продающий контент не давил, а развлекательный работал на доверие.', uk: 'Розписати місяць публікацій так, щоб продажний контент не тиснув, а розважальний працював на довіру.', en: 'Plan a month of posts so that sales content doesn’t push and entertaining content builds trust.' },
+    did:   { ru: 'Календарь на апрель: 11 постов, рубрики информационная / продающая / развлекательная / опрос, формат каждого (текст, фото, видео), тема и посыл; колонки под итоги месяца — охват, взаимодействия, клики, продажи. Отдельный лист — сетка сторис на неделю: количество в день, рубрика, тема, время выхода.',
+             uk: 'Календар на квітень: 11 постів, рубрики інформаційна / продажна / розважальна / опитування, формат кожного (текст, фото, відео), тема й посил; колонки під підсумки місяця — охоплення, взаємодії, кліки, продажі. Окремий аркуш — сітка сторіс на тиждень: кількість на день, рубрика, тема, час виходу.',
+             en: 'An April calendar: 11 posts across informational / sales / entertaining / poll pillars, the format of each (text, photo, video), topic and message; columns for month-end results — reach, interactions, clicks, sales. A separate sheet — a weekly stories grid: count per day, pillar, topic, posting time.' },
+    tools: { ru: 'Google Таблицы', uk: 'Google Таблиці', en: 'Google Sheets' },
+    result:{ ru: 'Календарь с полями под метрики — план и отчёт в одном файле.', uk: 'Календар із полями під метрики — план і звіт в одному файлі.', en: 'A calendar with metric fields — plan and report in one file.' },
   },
 
   /* Email и Telegram — материалов пока нет, описание по программе курса */
   {
     dir: 'email', kind: 'study',
-    title: 'Telegram-канал и email-воронка',
-    desc: 'Работа с тёплой базой: чтобы подписчик не терялся после первого касания.',
-    task: 'Выстроить воронку от подписки до продажи.',
-    did: 'Упаковала канал, собрала контент-стратегию и воронку продаж, сегментировала базу по стадии жизненного цикла, написала и сверстала серию писем, настроила персонализацию, разобрала метрики: открытия, клики, отписки.',
-    tools: 'Telegram, сервис рассылок, Google Таблицы',
-    result: 'Схема воронки и готовая серия писем с точками, где измеряется результат.',
+    title: { ru: 'Telegram-канал и email-воронка', uk: 'Telegram-канал і email-воронка', en: 'Telegram channel and email funnel' },
+    desc:  { ru: 'Работа с тёплой базой: чтобы подписчик не терялся после первого касания.', uk: 'Робота з теплою базою: щоб підписник не губився після першого дотику.', en: 'Working a warm list so a subscriber isn’t lost after the first touch.' },
+    task:  { ru: 'Выстроить воронку от подписки до продажи.', uk: 'Вибудувати воронку від підписки до продажу.', en: 'Build a funnel from subscription to sale.' },
+    did:   { ru: 'Упаковала канал, собрала контент-стратегию и воронку продаж, сегментировала базу по стадии жизненного цикла, написала и сверстала серию писем, настроила персонализацию, разобрала метрики: открытия, клики, отписки.',
+             uk: 'Упакувала канал, зібрала контент-стратегію і воронку продажів, сегментувала базу за стадією життєвого циклу, написала й зверстала серію листів, налаштувала персоналізацію, розібрала метрики: відкриття, кліки, відписки.',
+             en: 'Packaged the channel, built a content strategy and sales funnel, segmented the list by lifecycle stage, wrote and laid out an email series, set up personalisation, reviewed metrics: opens, clicks, unsubscribes.' },
+    tools: { ru: 'Telegram, сервис рассылок, Google Таблицы', uk: 'Telegram, сервіс розсилок, Google Таблиці', en: 'Telegram, an email service, Google Sheets' },
+    result:{ ru: 'Схема воронки и готовая серия писем с точками, где измеряется результат.', uk: 'Схема воронки та готова серія листів із точками, де вимірюється результат.', en: 'A funnel diagram and a ready email series with the points where results are measured.' },
   },
 ];
 
 /* ====================== рендер ====================== */
+const LANGS = ['ru', 'uk', 'en'];
+let L = 'ru';
+const t = v => (v && typeof v === 'object') ? (v[L] ?? v.ru ?? '') : (v ?? '');
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const plural = (n, one, few, many) => { const m10 = n % 10, m100 = n % 100; return n + ' ' + (m10 === 1 && m100 !== 11 ? one : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? few : many); };
+function plural(n, forms) {
+  if (L === 'en') return n + ' ' + (n === 1 ? forms[0] : forms[1]);
+  const m10 = n % 10, m100 = n % 100;
+  return n + ' ' + (m10 === 1 && m100 !== 11 ? forms[0] : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? forms[1] : forms[2]);
+}
 
 const real = PROJECTS.filter(p => p.kind === 'real');
 const study = PROJECTS.filter(p => p.kind === 'study');
 const dirsUsed = Object.keys(DIRS).filter(k => PROJECTS.some(p => p.dir === k));
-
-document.getElementById('stats').innerHTML = [
-  [real.length, 'Проектов'],
-  [dirsUsed.length, 'Направлений'],
-  [study.length, 'Учебных кейсов'],
-].filter(([n]) => n > 0).map(([n, l]) => `<div class="stat-box"><div class="stat-num">${n}</div><div class="stat-lbl">${l}</div></div>`).join('');
+let currentFilter = 'all';
 
 function renderCard(p) {
-  const tag = `<span class="case-tag ${DIRS[p.dir].badge}">${esc(DIRS[p.dir].title)}</span>` +
-              (p.kind === 'study' ? `<span class="case-tag b-gray">учебный проект · Hillel 2026</span>` : (p.client ? `<span class="case-tag b-gray">${esc(p.client)}</span>` : ''));
+  const tag = `<span class="case-tag ${DIRS[p.dir].badge}">${esc(t(DIRS[p.dir].title))}</span>` +
+              (p.kind === 'study' ? `<span class="case-tag b-gray">${esc(t(UI.studyTag))}</span>` : (p.client ? `<span class="case-tag b-gray">${esc(t(p.client))}</span>` : ''));
   const hasBody = p.task || p.did || p.tools || p.result;
   if (p.url && !hasBody) {
-    return `<a class="card" href="${esc(p.url)}" target="_blank" rel="noopener"><div class="card-domain">${esc(p.title)}</div><div class="card-desc">${esc(p.desc)}</div><span class="card-arrow">↗</span></a>`;
+    return `<a class="card" href="${esc(p.url)}" target="_blank" rel="noopener"><div class="card-domain">${esc(t(p.title))}</div><div class="card-desc">${esc(t(p.desc))}</div><span class="card-arrow">↗</span></a>`;
   }
-  const rows = [['Задача', p.task], ['Что сделала', p.did], ['Инструменты', p.tools, 'soft'], ['На выходе', p.result]]
-    .filter(([, v]) => v).map(([k, v, cls]) => `<dt>${k}</dt><dd class="${cls || ''}">${esc(v)}</dd>`).join('');
-  const media = p.imgs && p.imgs.length ? `<div class="case-media">${p.imgs.map(i => `<img src="${i.src}" alt="${esc(i.alt || p.title)}" loading="lazy">`).join('')}</div>` : '';
-  const ext = p.url ? `<a class="case-ext" href="${esc(p.url)}" target="_blank" rel="noopener">Открыть ↗</a>` : '';
-  return `<details class="case-card"><summary><div class="case-title">${esc(p.title)}</div><div class="case-tags">${tag}</div><span class="case-link"><span class="when-closed">Подробнее ↓</span><span class="when-open">Свернуть ↑</span></span></summary><div class="case-body"><dl>${rows}</dl>${media}${ext}</div></details>`;
+  const rows = [[UI.task, p.task], [UI.did, p.did], [UI.tools, p.tools, 'soft'], [UI.result, p.result]]
+    .filter(([, v]) => v).map(([k, v, cls]) => `<dt>${esc(t(k))}</dt><dd class="${cls || ''}">${esc(t(v))}</dd>`).join('');
+  const media = p.imgs && p.imgs.length ? `<div class="case-media">${p.imgs.map(i => `<img src="${esc(i.src)}" alt="${esc(t(i.alt) || t(p.title))}" loading="lazy">`).join('')}</div>` : '';
+  const ext = p.url ? `<a class="case-ext" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t(UI.open))}</a>` : '';
+  return `<details class="case-card"><summary><div class="case-title">${esc(t(p.title))}</div><div class="case-tags">${tag}</div><span class="case-link"><span class="when-closed">${esc(t(UI.more))}</span><span class="when-open">${esc(t(UI.less))}</span></span></summary><div class="case-body"><dl>${rows}</dl>${media}${ext}</div></details>`;
 }
 
-function renderSection(title, badge, badgeText, note, items, asGrid) {
+function renderSection(title, badge, badgeText, items, asGrid) {
   return `<div class="section fade-in"><div class="section-hdr"><h2 class="section-title">${esc(title)}</h2><span class="section-badge ${badge}">${esc(badgeText)}</span></div>` +
-         (note ? `<p class="section-note">${esc(note)}</p>` : '') +
          (asGrid ? `<div class="grid">${items.map(renderCard).join('')}</div>` : items.map(renderCard).join('')) + `</div>`;
 }
 
-function render(filter) {
+function renderContent() {
   const out = [];
-  const inDir = p => filter === 'all' || p.dir === filter;
+  const inDir = p => currentFilter === 'all' || p.dir === currentFilter;
   const r = real.filter(inDir);
-  if (r.length) out.push(renderSection('Проекты', 'b-gray', plural(r.length, 'проект', 'проекта', 'проектов'), '', r, r.every(p => p.url && !(p.task || p.did))));
+  if (r.length) out.push(renderSection(t(UI.projects), 'b-gray', plural(r.length, UI.pluralProj[L]), r, r.every(p => p.url && !(p.task || p.did))));
   for (const k of dirsUsed) {
-    if (filter !== 'all' && filter !== k) continue;
+    if (currentFilter !== 'all' && currentFilter !== k) continue;
     const items = study.filter(p => p.dir === k);
     if (!items.length) continue;
-    out.push(renderSection(DIRS[k].title, DIRS[k].badge, plural(items.length, 'учебный кейс', 'учебных кейса', 'учебных кейсов'), '', items, false));
+    out.push(renderSection(t(DIRS[k].title), DIRS[k].badge, plural(items.length, UI.pluralStudy[L]), items, false));
   }
   document.getElementById('content').innerHTML = out.join('');
 }
 
-const tabs = [['all', 'Все', PROJECTS.length], ...dirsUsed.map(k => [k, DIRS[k].title, PROJECTS.filter(p => p.dir === k).length])];
-const tabsEl = document.getElementById('tabs');
-tabsEl.innerHTML = tabs.map(([id, t, n], i) => `<button class="tab${i === 0 ? ' active' : ''}" data-id="${id}" type="button">${esc(t)}<span class="cnt">${n}</span></button>`).join('');
-tabsEl.addEventListener('click', e => {
+function renderStatic() {
+  document.documentElement.lang = L === 'uk' ? 'uk' : L;
+  document.title = t(UI.title);
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(UI[el.dataset.i18n]); });
+  document.getElementById('btnMail').href = 'mailto:annodessa2016@icloud.com?subject=' + encodeURIComponent(t(UI.mailSubj));
+  document.getElementById('stats').innerHTML = [
+    [real.length, UI.statProjects], [dirsUsed.length, UI.statDirs], [study.length, UI.statStudy],
+  ].filter(([n]) => n > 0).map(([n, l]) => `<div class="stat-box"><div class="stat-num">${n}</div><div class="stat-lbl">${esc(t(l))}</div></div>`).join('');
+  const tabs = [['all', t(UI.all), PROJECTS.length], ...dirsUsed.map(k => [k, t(DIRS[k].title), PROJECTS.filter(p => p.dir === k).length])];
+  document.getElementById('tabs').innerHTML = tabs.map(([id, tt, n]) => `<button class="tab${id === currentFilter ? ' active' : ''}" data-id="${id}" type="button">${esc(tt)}<span class="cnt">${n}</span></button>`).join('');
+  document.getElementById('offers').innerHTML = OFFERS.map(o => `<div class="offer-item"><b>${esc(t(o.t))}</b><span>${esc(t(o.d))}</span><em>${esc(t(o.term))}</em></div>`).join('');
+  document.getElementById('about').innerHTML = ABOUT.map(a => `<div><h3>${esc(t(a.h))}</h3>${a.p.map(p => `<p>${esc(t(p))}</p>`).join('')}</div>`).join('');
+  document.querySelectorAll('#lang button').forEach(b => b.classList.toggle('active', b.dataset.lang === L));
+}
+
+function setLang(l, remember) {
+  if (!LANGS.includes(l)) return;
+  L = l;
+  if (remember) { try { localStorage.setItem('lang', l); } catch (e) {} }
+  renderStatic(); renderContent();
+}
+
+document.getElementById('tabs').addEventListener('click', e => {
   const b = e.target.closest('.tab'); if (!b) return;
-  tabsEl.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x === b));
-  render(b.dataset.id);
+  currentFilter = b.dataset.id;
+  document.querySelectorAll('#tabs .tab').forEach(x => x.classList.toggle('active', x === b));
+  renderContent();
 });
-render('all');
+document.getElementById('lang').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  setLang(b.dataset.lang, true);
+  const u = new URL(location.href); u.searchParams.set('lang', b.dataset.lang); history.replaceState(null, '', u);
+});
+
+/* стартовый язык: ?lang= → сохранённый → язык браузера → en */
+(function () {
+  const q = new URLSearchParams(location.search).get('lang');
+  let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+  const nav = (navigator.language || '').toLowerCase();
+  const guess = nav.startsWith('uk') ? 'uk' : nav.startsWith('ru') ? 'ru' : 'en';
+  setLang(LANGS.includes(q) ? q : (LANGS.includes(saved) ? saved : guess), false);
+})();
 </script>
 </body>
 </html>
